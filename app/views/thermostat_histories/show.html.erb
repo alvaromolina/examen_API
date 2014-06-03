@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Thermostat:</strong>
+  <%= @thermostat_history.thermostat %>
+</p>
+
+<p>
+  <strong>Temperature:</strong>
+  <%= @thermostat_history.temperature %>
+</p>
+
+<p>
+  <strong>Humidity:</strong>
+  <%= @thermostat_history.humidity %>
+</p>
+
+<p>
+  <strong>Kw:</strong>
+  <%= @thermostat_history.kw %>
+</p>
+
+<p>
+  <strong>Co2:</strong>
+  <%= @thermostat_history.co2 %>
+</p>
+
+<%= link_to 'Edit', edit_thermostat_history_path(@thermostat_history) %> |
+<%= link_to 'Back', thermostat_histories_path %>

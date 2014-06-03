@@ -1,0 +1,32 @@
+<h1>Listing thermostats</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Serial</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @thermostats.each do |thermostat| %>
+      <tr>
+        <td><%= thermostat.serial %></td>
+        <td><%= link_to 'Reportar Problema', '/issues/new/'+thermostat.id.to_s %></td>
+        <td><%= link_to 'Ver Problemas', '/issues/list/'+thermostat.id.to_s %></td>
+        <td><%= link_to 'Show', thermostat %></td>
+        <td><%= link_to 'Edit', edit_thermostat_path(thermostat) %></td>
+        <td><%= link_to 'Destroy', thermostat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= link_to 'Historial termostato (admin)', '/thermostat_histories' %>
+<br>
+<%= link_to 'Ver problemas (admin)', '/issues' %>
+<br>
+<%= link_to 'New Themostat', new_thermostat_path %>

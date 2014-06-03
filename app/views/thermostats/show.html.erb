@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Serial:</strong>
+  <%= @thermostat.serial %>
+</p>
+
+<p>
+  <strong>Temperature:</strong>
+  <%= @thermostat.thermostat_histories.last ? @thermostat.thermostat_histories.last.temperature : '' %>
+</p>
+
+<p>
+  <strong>Temperature:</strong>
+  <%= @thermostat.thermostat_histories.last ? @thermostat.thermostat_histories.last.humidity : '' %>
+</p>
+
+<p>
+  <strong>KW:</strong>
+  <%= @thermostat.thermostat_histories.last ? @thermostat.thermostat_histories.last.kw : ' ' %>
+</p>
+
+<p>
+  <strong>Temperature:</strong>
+  <%= @thermostat.thermostat_histories.last ? @thermostat.thermostat_histories.last.co2 : ' ' %>
+</p>
+
+
+<%= link_to 'Edit', edit_thermostat_path(@thermostat) %> |
+<%= link_to 'Back', thermostats_path %>

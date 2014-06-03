@@ -1,0 +1,40 @@
+<h1>Listing thermostat_histories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Serial Thermostat</th>
+      <th>Locacion</th>
+      <th>Usuario</th>
+      <th>Temperature</th>
+      <th>Humidity</th>
+      <th>Kw</th>
+      <th>Co2</th>
+      <th>Consumido al dia</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @thermostat_histories.each do |thermostat_history| %>
+      <tr>
+        <td><%= thermostat_history.thermostat.serial %></td>
+        <td><%= '' %></td>
+        <td><%= '' %></td>
+        <td><%= thermostat_history.temperature %></td>
+        <td><%= thermostat_history.humidity %></td>
+        <td><%= thermostat_history.kw %></td>
+        <td><%= thermostat_history.co2 %></td>
+        <td><%= thermostat_history.thermostat.kw_day %></td>
+        <td><%= link_to 'Show', thermostat_history %></td>
+        <td><%= link_to 'Edit', edit_thermostat_history_path(thermostat_history) %></td>
+        <td><%= link_to 'Destroy', thermostat_history, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Thermostat history', new_thermostat_history_path %>

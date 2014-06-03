@@ -1,0 +1,40 @@
+<h1>Listing issues</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Thermostat</th>
+      <th>Description</th>
+      <th>Status</th>
+      <th>Resolution</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @issues.each do |issue| %>
+      <tr>
+        <td><%= issue.thermostat.id %></td>
+        <td><%= issue.description %></td>
+        <td><%= issue.status %></td>
+        <td><%= issue.resolution %></td>
+
+        <% if (@admi) %>
+          <% if (issue.status =='RESUELTO') %>
+
+            <td><%= link_to 'Abrir', '/issues/status/ABIERTO/'+issue.id.to_s %></td>
+
+          <% elsif(issue.status =='ABIERTO') %>
+            <td><%= link_to 'Resolver', '/issues/resolve/'+issue.id.to_s %></td>
+        
+          <% end %>
+        <% else %> 
+          <td><%= link_to 'Cancelar', '/issues/status/CANCELADO/'+issue.id.to_s %></td>
+
+        <% end  %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

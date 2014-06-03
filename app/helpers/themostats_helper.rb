@@ -1,0 +1,2 @@
+module ThemostatsHelper
+end
